@@ -1,0 +1,33 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "flexbox demo",
+  "main": "index.js",
+  "browserslist": [
+    "> 1%",
+    "last 10 versions"
+  ],
+  "scripts": {
+    "start": "npm-run-all --parallel dev-server watch:sass",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
+    
+    "dev-server": "live-server",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 version\" css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rayGreycloud",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1"
+  }
+}
