@@ -3,12 +3,25 @@
   list-style: none;
   margin-top: 3.5rem;
   
+  @media only screen and (max-width: $bp-900) {
+    display: flex;
+    margin: 0;
+  }
+  
   &__item {
     position: relative;
     
     &:not(:last-child) {
       margin-bottom: .5rem;
+      
+      @media only screen and (max-width: $bp-900) {
+        margin: 0;
+      }      
     }
+    
+    @media only screen and (max-width: $bp-900) {
+      flex: 1;
+    }    
   }
   
   &__item::before {
@@ -47,6 +60,11 @@
     
     display: flex;
     align-items: center;
+    
+    @media only screen and (max-width: $bp-900) {
+      justify-content: center;
+      padding: 2rem;
+    }    
   }
   
   &__icon {
